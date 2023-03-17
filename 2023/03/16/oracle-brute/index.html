@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang=zh-CN>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        Oracle数据库爆破 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+
+    
+
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i>  </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="/img/favicon.ico" />
+        </div>
+        <div class="name">
+            <i>K1p2y3</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/collect/">
+                    <i class="iconfont icon-shoucang1"></i>
+                    <span>收藏</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BB%8B%E7%BB%8D"><span class="toc-text">Oracle数据库介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-text">环境搭建</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-text">Oracle数据库基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#rownum%E7%9A%84%E7%89%B9%E6%80%A7"><span class="toc-text">rownum的特性</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8python%E8%BF%9E%E6%8E%A5Oracle%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text">使用python连接Oracle数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80%EF%BC%9A%E4%BD%BF%E7%94%A8cx-Oracle%E6%A8%A1%E5%9D%97"><span class="toc-text">方法一：使用cx_Oracle模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C%EF%BC%9A%E4%BD%BF%E7%94%A8oracledb%E6%A8%A1%E5%9D%97"><span class="toc-text">方法二：使用oracledb模块</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="toc-text">参考链接</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-bg" id="search-bg"></div>
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i>  </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        Oracle数据库爆破
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2023-03-16 10:09:41</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#安全研究" title="安全研究">安全研究</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <h1 id="Oracle数据库介绍"><a href="#Oracle数据库介绍" class="headerlink" title="Oracle数据库介绍"></a>Oracle数据库介绍</h1><p>Oracle数据库是一种关系型数据库管理系统，由美国甲骨文公司开发，它是当前最流行的关系型数据库管理系统之一，也是业界最受欢迎的数据库之一。Oracle数据库拥有丰富的功能，如安全管理、可靠性管理、数据库管理、数据库优化等，并且具有强大的可扩展性和可移植性，可以满足不同类型的应用程序的需求。</p>
+<h1 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h1><ul>
+<li>Oracle数据库安装包</li>
+<li>Windows server 2016</li>
+</ul>
+<p>直接去官网下载安装包，我这里下载的版本为19。</p>
+<ul>
+<li><em>下载地址：<a href="https://www.oracle.com/database/technologies/oracle-database-software-downloads.html">https://www.oracle.com/database/technologies/oracle-database-software-downloads.html</a></em></li>
+</ul>
+<img src="/2023/03/16/oracle-brute/install.png" class="">
+
+<p>下载完直接安装，不会有报错（选择Windows server 2016），安装完成后，打开cmd,输入sqlplus 输入账号密码直接进入数据库</p>
+<img src="/2023/03/16/oracle-brute/sqlplus.png" class="">
+<p>使用sys用户登陆 sys as sysdbas （建立远程连接关闭Windows防火墙就行）</p>
+<img src="/2023/03/16/oracle-brute/syslogin.png" class="">
+<p>使用代码连接oracle数据库有两种形式,需要知道sid和Server_Name</p>
+<ul>
+<li>jdbc:oracle:thin:@ip:port:SID</li>
+<li>jdbc:oracle:thin:@ip:port&#x2F;Server_Name</li>
+</ul>
+<h1 id="Oracle数据库基本操作"><a href="#Oracle数据库基本操作" class="headerlink" title="Oracle数据库基本操作"></a>Oracle数据库基本操作</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> user_users;       查询当前用户</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> all_users;        查询所有用户</span><br><span class="line"><span class="keyword">select</span> name <span class="keyword">from</span> v$database;    查询数据库名称</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> all_tables        查询所有的表</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> user_tables       查询当前用户的所有表</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> all_tab_columns   查询所有字段</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> user_tab_columns  查询当前用户的字段</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> v$version         查当前使用的Oracle版本</span><br></pre></td></tr></table></figure>
+
+<h2 id="rownum的特性"><a href="#rownum的特性" class="headerlink" title="rownum的特性"></a>rownum的特性</h2><p>由于在Oracle中不存在limit，所以查询特定的数据需要用rownum来进行选择。比如先输入：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> owner <span class="keyword">from</span> all_tables;</span><br></pre></td></tr></table></figure>
+<img src="/2023/03/16/oracle-brute/rownun1.png" class="">
+
+<p>显示前2条数据</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> owner <span class="keyword">from</span> all_tables <span class="keyword">where</span> rownum<span class="operator">&lt;=</span><span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+<img src="/2023/03/16/oracle-brute/rownum2.png" class="">
+<h1 id="使用python连接Oracle数据库"><a href="#使用python连接Oracle数据库" class="headerlink" title="使用python连接Oracle数据库"></a>使用python连接Oracle数据库</h1><h2 id="方法一：使用cx-Oracle模块"><a href="#方法一：使用cx-Oracle模块" class="headerlink" title="方法一：使用cx_Oracle模块"></a>方法一：使用cx_Oracle模块</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> cx_Oracle</span><br><span class="line"></span><br><span class="line">db = cx_Oracle.connect(<span class="string">&#x27;用户/密码@ip:端口/service name&#x27;</span>)</span><br><span class="line">cursor = cx_Oracle.Cursor(db) <span class="comment"># db作为参数传递给函数</span></span><br><span class="line">cursor.execute(<span class="string">&#x27;select * from table_name&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="方法二：使用oracledb模块"><a href="#方法二：使用oracledb模块" class="headerlink" title="方法二：使用oracledb模块"></a>方法二：使用oracledb模块</h2><p>请确保已安装以下 Oracle 依赖：</p>
+<ol>
+<li>oracledb: Python 的 Oracle 数据库模块，用于连接和操作 Oracle 数据库<br>安装方法：pip install oracledb</li>
+<li>Oracle Instant Client: Oracle 的轻量级客户端库，用于与 Oracle 数据库进行通信<br>下载地址：<a href="https://www.oracle.com/cn/database/technologies/instant-client/downloads.html">https://www.oracle.com/cn/database/technologies/instant-client/downloads.html</a><br>请根据您的操作系统和 Python 版本选择合适的 Instant Client 版本</li>
+<li>将 Instant Client 解压到 ‘instantclient_19_8’ 文件夹，并确保该文件夹位于当前脚本的同一目录下</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> oracledb</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line">dir_path = os.path.dirname(os.path.realpath(__file__))</span><br><span class="line">folder_path = os.path.join(dir_path, <span class="string">&#x27;instantclient_19_8&#x27;</span>)</span><br><span class="line">oracledb.init_oracle_client(lib_dir=folder_path)</span><br><span class="line">connection = oracledb.connect(</span><br><span class="line">    user=<span class="string">&quot;sys&quot;</span>,</span><br><span class="line">    port=<span class="number">1521</span>,</span><br><span class="line">    password=<span class="string">&#x27;123456&#x27;</span>,</span><br><span class="line">    host=<span class="string">&quot;192.168.140.112&quot;</span>,</span><br><span class="line">    sid=<span class="string">&quot;orcl&quot;</span>,</span><br><span class="line">    mode=oracledb.SYSDBA)</span><br></pre></td></tr></table></figure>
+
+<p>推荐方法二，因为方法二相对于方法一，更加简单，灵活。</p>
+<p>连接数据库一些常见的状态码</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ORA</span>-<span class="number">12170</span>: (连接超时,端口无法通信）</span><br><span class="line"><span class="attribute">ORA</span>-<span class="number">12505</span>: (SID错误，能够通信)</span><br><span class="line"><span class="attribute">ORA</span>-<span class="number">12504</span>: (没有提供SERVICE_NAME)</span><br><span class="line"><span class="attribute">ORA</span>-<span class="number">12514</span>: (SID或服务名错误，能够通信)</span><br><span class="line"><span class="attribute">ORA</span>-<span class="number">28000</span>: (该账户锁定,不判断密码是否正确)</span><br><span class="line"><span class="attribute">ORA</span>-<span class="number">01017</span>: (用户名或密码错误)</span><br><span class="line"><span class="attribute">ORA</span>-<span class="number">28009</span>: (此时密码正确，需切换DBA角色登陆)</span><br><span class="line"><span class="attribute">ORA</span>-<span class="number">01031</span>: (该账户不是DBA权限,不保证账户存在)</span><br><span class="line"><span class="attribute">ORA</span>-<span class="number">28547</span>：(连接的oci.dll版本文件版本或配置不正确)`</span><br></pre></td></tr></table></figure>
+
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><ul>
+<li><a href="https://juejin.cn/post/7096685356296175623#heading-3">https://juejin.cn/post/7096685356296175623#heading-3</a></li>
+<li><a href="https://www.oracle.com/database/technologies/oracle-database-software-downloads.html">https://www.oracle.com/database/technologies/oracle-database-software-downloads.html</a></li>
+<li><a href="https://www.oracle.com/cn/database/technologies/instant-client/macos-intel-x86-downloads.html">https://www.oracle.com/cn/database/technologies/instant-client/macos-intel-x86-downloads.html</a></li>
+<li><a href="https://mp.weixin.qq.com/s/kA2so6I8aGLOAvSm8ZFfQg">https://mp.weixin.qq.com/s/kA2so6I8aGLOAvSm8ZFfQg</a></li>
+<li><a href="https://python-oracledb.readthedocs.io/en/latest/index.html">https://python-oracledb.readthedocs.io/en/latest/index.html</a></li>
+</ul>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="lv-container"></div>
+        <div class="giscus"></div>
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+
+
+
+
+
+
+</html>
